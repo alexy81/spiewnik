@@ -25,7 +25,7 @@ class PiosenkasController < ApplicationController
     end
     if current_user != nil
       @zalogowany = true
-    else
+    else 
       @zalogowany = false
     end 
   end
