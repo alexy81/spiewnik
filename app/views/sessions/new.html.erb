@@ -1,0 +1,19 @@
+<% provide(:title, "Logowanie") %>
+<h1>Logowanie</h1>
+
+<div>
+  <div id="formatka">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "Zaloguj się", class: "potwierdz" %>
+    <% end %>
+
+    <p>Nie masz jeszcze użytkownika? <%= link_to "Zarejestruj się teraz", users_path %></p>
+  </div>
+</div>

@@ -1,0 +1,318 @@
+@CHARSET "UTF-8";
+
+body {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #0F0F0F;
+}
+
+div#users {
+	width: 1000px;
+	position: absolute;
+	left: 50%;
+	margin-left: -500px;
+	background-color: #FFFFFF;
+}
+
+div#formatka_piosenka {
+	width: 800px;
+	position: relative;
+	left: 50%;
+	margin-left: -400px;
+}
+
+div#formatka_piosenka div.field table {
+	width: 100%;
+}
+
+div#formatka_piosenka div.field table tr td {
+	text-align: left;
+}
+
+div#formatka_piosenka div.field table tr td.tekst {
+	width: 70%;
+}
+
+div#formatka_piosenka div.field table tr td.akordy {
+	width: 30%;
+}
+
+textarea#piosenka_tekst, textarea#piosenka_akordy {
+	width: 100%;
+	height: 600px;
+}
+
+div#formatka {
+	width: 400px;
+	position: relative;
+	left: 50%;
+	margin-left: -200px;
+	padding-bottom: 50px;
+}
+
+div#users form label {
+	display: block;
+	font-size: 12px;
+	text-align: left;
+	padding: 10px;
+}
+
+div#users form input {
+	display: block;
+	width: 380px;
+	height: 30px;
+	padding-left: 15px;
+	-webkit-transition: all 0.30s ease-in-out;
+  	-moz-transition: all 0.30s ease-in-out;
+  	-ms-transition: all 0.30s ease-in-out;
+  	-o-transition: all 0.30s ease-in-out;
+  	outline: none;
+}
+
+div#users form input:focus {
+	box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+
+div#users form input.potwierdz {
+	display: block;
+	width: 100px;
+	color: #FFFFFF;
+	font-weight: bold;
+	margin: 20px;
+	padding: 0;
+	background-color: #004FFD;
+	border: 0;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+div#main {
+	width: 1500px;
+	background-image:url('tlo.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	position: absolute;
+	left: 50%;
+	margin-left: -750px
+}
+
+div#content {
+	width: 1032px;
+	background-color: #c0c0c0;
+	margin: auto;
+	margin-top: -6px;
+}
+
+div#akcje {
+	text-align: left;
+	padding: 5px 10px;
+	position: fixed;
+	z-index: 5000;
+	right: 0;
+	top: 230px;
+	background-color: #070707;
+}
+
+div#akcje table td.opcje a {
+	color: #FFFFFF;
+	text-decoration: none;
+	padding-left: 10px;
+}
+
+div#akcje table td.opcje {
+	text-align: left;
+	width: 200px;
+	font-size: 16px;
+    padding: 10px 0px;
+    color: #FFFFFF;
+}
+
+div#akcje, div#literki {
+	margin-right: -210px;
+}
+
+div#literki {
+	text-align: left;
+	padding: 5px 10px;
+	position: fixed;
+	z-index: 5000;
+	right: 0;
+	top: 20px;
+	background-color: #070707;
+}
+
+div#literki table td {
+    width: 50px;
+    text-align: center;
+}
+
+div#literki table td.skocz {
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 0px;
+    color: #FFFFFF;
+}
+
+div#literki table td.zwin, div#wybrane_piosenki table td.zwin_p, div#akcje table td.zwin_a {
+	font-size: 28px;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+div#literki table td.zwin, div#akcje table td.zwin_a {
+	width: 40px;
+	border-right: 1px solid #5f5f5f;
+}
+
+div#literki table td a {
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+div#wybrane_piosenki {
+	width: 250px;
+	text-align: left;
+	padding: 5px 10px;
+	position: fixed;
+	z-index: 5000;
+	left: 0;
+	top: 20px;
+	background-color: #070707;
+	max-height: 500px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+div#wybrane_piosenki table td.zwin_p {
+	border-left: 1px solid #5f5f5f;
+	width: 40px;
+	text-align: center;
+}
+
+div#wybrane_piosenki table td {
+	color: #FFFFFF;
+	text-align: left;
+}
+
+div#wybrane_piosenki table td#wybrane_do_druku {
+	font-weight: bold;
+	font-size: 16px;
+	padding-bottom: 10px;
+}
+
+.litera_box, .tytul_box, .tytul_box_clicked {
+    height: 130px;
+    top:0px; 
+    float:left;
+    padding: 20px;
+    font-size: 20px;
+    text-align: left;
+    word-wrap: break-word;
+    background-color: #FFFFFF;
+    display: table-cell;
+}
+
+.litera_box {
+    width:132px;
+    border: 1px 0px solid #c0c0c0;
+    text-align: center;
+    font-size: 80px;
+    padding-top: 40px;
+    padding-bottom: 0px;
+    color: #FFFFFF;
+    background-color: #00acee;
+}
+
+.tytul_box, .tytul_box_clicked {
+	width:130px;
+	border-top: 1px solid #c0c0c0;
+	border-bottom: 1px solid #c0c0c0;
+	border-left: 1px solid #eeeeee;
+	border-right: 1px solid #eeeeee;
+	text-align: left;
+	word-wrap: break-word;
+	background-color: #FFFFFF;
+	cursor: pointer;
+}
+
+.tresc_box {
+	font-size: 12px;
+	text-align: left;
+	padding: 20px 0px 0px 0px;
+}
+
+.tytul_box, .tytul, .tresc, .tytul_box_clicked { 
+	position:relative;
+	z-index: 0; 
+}
+
+div#tresc_div {
+	background-color: #47d1af;
+	display: none;
+	position:relative;
+	z-index: 1000;
+	margin-top: -20px;
+}
+
+div.row {
+	width: 1032px;
+	height: 0px;
+	background-color: #c0c0c0;
+	position:relative;
+	z-index: 100;
+}
+
+div.clear {
+	clear: both;
+	height: 0px;
+}
+
+h1 {
+	padding: 0;
+}
+
+h1 p {
+	font-size: 24px;
+}
+
+table {
+	width: 100%;
+}
+
+table tr td.tresc, table tr td.akordy, table tr td.obrazki {
+	vertical-align: top;
+}
+
+table tr td.tresc {
+	padding: 0px 20px 20px 50px;
+}
+
+table tr td.tresc {
+	width: 355px;
+}
+
+table tr td.akordy {
+	width: 280px;
+	padding-left: 20px;
+}
+
+table tr td.tresc p, table tr td.akordy p {
+	font-size: 11px;
+	text-align: left;
+}
+
+table tr td.nazwa_akordu {
+	text-align: right;
+	vertical-align: middle;
+	padding-right: 10px;
+	font-size: 15px;
+}
+
+table tr td.obrazek_akordu {
+	text-align: left;
+	vertical-align: top;
+}

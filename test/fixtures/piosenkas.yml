@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tytul: MyString
+  tekst: MyText
+  akordy: 
+  wykonawca: MyString
+  obrazek: MyString
+
+two:
+  tytul: MyString
+  tekst: MyText
+  akordy: 
+  wykonawca: MyString
+  obrazek: MyString

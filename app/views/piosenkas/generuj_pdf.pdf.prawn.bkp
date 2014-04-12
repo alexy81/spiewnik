@@ -1,0 +1,26 @@
+pdf.font "#{Prawn::BASEDIR}/data/fonts/DejaVuSans.ttf"
+
+@spis.each do |id,piosenka|
+	piosenki = [[]]
+	tytul = pdf.make_cell(:content => "#{piosenka[:tytul]}", :colspan => 3)
+	Rails.logger.info piosenka[:tytul]
+	akordy = pdf.make_cell(:content => "#{piosenka[:akordy]}")
+	obrazki = [[]]
+	piosenka[:obrazki_akordow].each do |nazwa,obrazek|
+		sciezka = "#{Rails.root.join('app', 'assets', 'images', obrazek)}"
+		obrazki += [[nazwa, {:image => sciezka}]]
+	end
+	pierwsza_strona_tekst = piosenka[:tekst][0].join("\n")
+	pierwsza_strona = pdf.make_cell(:content => "#{pierwsza_strona_tekst}")
+	piosenki += [[tytul], [pierwsza_strona, akordy, obrazki]]
+	piosenka[:tekst].shift
+	if piosenka[:tekst].any? 
+		piosenka[:tekst].each do |fragment|
+			strona_tekst = fragment.join("\n")
+			strona = pdf.make_cell(:content => "#{strona_tekst}", :colspan => 3)
+			piosenki += [[strona]]
+		end
+	end
+	pdf.table(piosenki, :column_widths => {0 => 310}, :cell_style => {:border_width => 0})
+	pdf.start_new_page
+end

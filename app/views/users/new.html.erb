@@ -1,0 +1,23 @@
+<% provide(:title, 'Rejestracja') %>
+<h1>Rejestracja</h1>
+
+<div>
+  <div id="formatka">
+    <%= form_for(@user) do |f| %>
+
+      <%= f.label :name, "Imię i nazwisko" %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email, "Email" %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password, "Hasło" %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Potwierdź hasło" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Wyślij", class: "potwierdz" %>
+    <% end %>
+  </div>
+</div>

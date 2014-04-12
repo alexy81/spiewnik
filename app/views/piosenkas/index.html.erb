@@ -1,0 +1,25 @@
+<% j = 1 %>
+<% @spis.each do |litera,piosenki| %>
+  <% i = 1 %>
+  <div class="litera_box" id="<%= litera %>"> <%= litera %> </div>
+  <% i = i.next %>
+  <% piosenki.each do |id,piosenka| %>
+	  <div class="tytul_box" id="<%= j %>_<%= id %>">
+	  	<%= piosenka[:tytul] %>
+	  	<div class="tresc_box">
+	  		<%= truncate(piosenka[:tekst], :length => 60, :separator => ' ') %>
+	  	</div>
+	  </div>
+	  <% i = i.next %>
+	  <% if ((i > 1) && (i % 6 == 1)) %>
+	  	<div class="clear">&nbsp;</div>
+	  	<div class="row" id="row_<%= j.to_s %>">&nbsp;</div>
+	  	<div class="clear">&nbsp;</div>
+	  	<% j = j.next %>
+	  <% end %>
+  <% end %>
+  <div class="clear">&nbsp;</div>
+  <div class="row" id="row_<%= j.to_s %>">&nbsp;</div>
+  <div class="clear">&nbsp;</div>
+  <% j = j.next %>
+<% end %>

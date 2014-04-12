@@ -1,0 +1,21 @@
+<div id="wybrane_piosenki" <% if @piosenkiDodane.empty? %>style="display:none;"<% end %>>
+	<table cellspacing="0" cellpadding="0">
+		<tr>
+		    <td id="wybrane_do_druku">
+				Wybrane do druku:
+		    </td>
+		    <td rowspan="2" class="zwin_p">
+				<
+		    </td>
+		</tr>
+		<tr>
+			<td id="spis">
+				<% if !@piosenkiDodane.empty? %>
+					<% @piosenkiDodane.each do |piosenka| %>
+						<%= piosenka.tytul %> <br />
+					<% end %>
+				<% end %>
+			</td>
+		</tr>
+	</table>
+</div>

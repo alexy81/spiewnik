@@ -1,0 +1,49 @@
+<div id="formatka_piosenka">
+	<%= form_for(@piosenka) do |f| %>
+	  <% if @piosenka.errors.any? %>
+	    <div id="error_explanation">
+	      <h2>Nie udało się zapisać piosenki:</h2>
+	
+	      <ul>
+	      <% @piosenka.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+	
+	  <div class="field">
+	    <%= f.label 'Tytuł' %>
+	    <%= f.text_field :tytul %>
+	  </div>
+	  
+	  <div class="field">
+	    <%= f.label :wykonawca %>
+	    <%= f.text_field :wykonawca %>
+	  </div>
+	  
+	  <div class="field">
+	    <%= f.label 'Tekst i akordy' %>
+	    <table>
+	    	<tr>
+	    		<td class="tekst">
+	    			<%= f.text_area :tekst %>
+	    		</td>
+	    		<td class="akordy">
+	    			<%= f.text_area :akordy %>
+	    		</td>
+	    	</tr>
+	    </table>
+	  </div>
+	  
+	  <div class="field">
+	    <%= f.label :obrazek %>
+	    <%= f.text_field :obrazek %>
+	  </div>
+	  
+	  <div class="actions">
+	    <%= f.submit "Zapisz", class: "potwierdz" %>
+	  </div>
+	  
+	<% end %>
+</div>

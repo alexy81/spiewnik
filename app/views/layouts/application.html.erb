@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Śpiewnik SKPB Lublin</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="main">
+	<input type="hidden" id="animate" value="tak" />
+	<input type="hidden" id="zwin" value="tak" />
+	<input type="hidden" id="zwin_p" value="tak" />
+	<input type="hidden" id="zwin_a" value="tak" />
+	<%= image_tag("top.jpg") %>
+	
+	<%= render "literki" %>
+	
+	<%= render partial: "akcje", locals: {zalogowany: @zalogowany} %>
+	
+	<%= render partial: "lista", locals: {piosenkiDodane: @piosenkiDodane} %>
+	
+	<div id="content">
+		<%= yield %>
+	</div>
+</div>
+
+</body>
+</html>

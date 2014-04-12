@@ -1,0 +1,23 @@
+<div id="akcje">
+    <table cellspacing="0" cellpadding="0">
+		<tr>
+		    <td class="zwin_a">
+				<%= image_tag("options.png") %>
+		    </td>
+		    <td class="opcje">
+				<% if @zalogowany %>
+					<%= link_to "Dodaj piosenkę", "/new" %>
+					<br />
+					<% if (current_user.admin? || current_user.moderator?) %>
+						<%= link_to "Zarządzaj piosenkami", "/" %>
+					<br />
+					<% end %>
+					<br />
+					<%= link_to "Wyloguj się", "/signout" %>
+				<% else %>
+					<%= link_to "Zaloguj się", "/signin" %>
+				<% end %>
+		    </td>
+		</tr>
+    </table>
+</div>

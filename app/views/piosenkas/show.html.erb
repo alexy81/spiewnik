@@ -1,0 +1,39 @@
+<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td colspan="2">
+			<h1><%= simple_format(@piosenka.tytul) %></h1>
+		</td>
+		<td>
+			<% if (!session[:spiewnik].include?(@piosenka.id.to_s)) %>
+				<%= image_tag("dodaj.png", :alt => "Dodaj do śpiewnika PDF", :title => "Dodaj do śpiewnika PDF", :class => "to_pdf") %>
+			<% else %>
+				<%= image_tag("usun.png", :alt => "Usuń ze śpiewnika PDF", :title => "Usuń ze śpiewnika PDF", :class => "from_pdf") %>
+			<% end %>
+			<% if (!session[:spiewnik].empty?) %>
+				<%= link_to(image_tag("pdf_s.png", :alt => "Wyświetl śpiewnik PDF", :title => "Wyświetl śpiewnik PDF"), "generuj_pdf", method: :post) %>
+			<% end %>
+		</td>
+	</tr>
+	<tr>
+		<td class="tresc">
+			<%= simple_format(@piosenka.tekst) %>
+		</td>
+		<td class="akordy">
+			<%= simple_format(@piosenka.akordy) %>
+		</td>
+		<td class="obrazki">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<% @obrazkiAkordow.each do |nazwa,obrazek| %>
+				<tr>
+					<td class="nazwa_akordu">
+						<%= nazwa %>:
+					</td>
+					<td class="obrazek_akordu">
+					 	<%= image_tag(obrazek) %>
+					</td>
+				<% end %>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
