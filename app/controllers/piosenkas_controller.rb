@@ -28,12 +28,6 @@ class PiosenkasController < ApplicationController
     else
       @zalogowany = false
     end 
-    if @zalogowany
-      logger.info 'tak'
-    else
-      logger.info 'nie'
-    end
-    logger.info @zalogowany 
   end
 
   def show
