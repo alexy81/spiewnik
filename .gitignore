@@ -16,5 +16,6 @@
 /tmp
 
 .project
-*~db
-config/database.yml
+*~
+/db
+/config/database.yml
